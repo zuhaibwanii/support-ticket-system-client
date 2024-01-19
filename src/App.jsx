@@ -9,6 +9,7 @@ import SnackbarContainer from './components/snackbar';
 
 //views
 import SupportTicketPage from './pages/support-ticket';
+import SupportAgentPage from './pages/support-agent';
 
 //constants
 import constants from './constants';
@@ -37,10 +38,12 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router history={history}>
           <GlobalStates.Provider value={{ globalStates, setGlobalStates }}>
-          <Route exact path="/">
-              <SupportTicketPage/>
+            <Route exact path="/">
+              <SupportTicketPage />
             </Route>
-           
+            <Route exact path="/support-agents">
+              <SupportAgentPage />
+            </Route>
           </GlobalStates.Provider>
         </Router>
       </ThemeProvider>

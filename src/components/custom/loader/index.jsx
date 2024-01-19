@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
             width: '3rem !important',
             height: '3rem !important',
             '& svg': {
-                filter: 'invert(20%) sepia(88%) saturate(7483%) hue-rotate(351deg) brightness(91%) contrast(111%)'
+                filter: 'invert(0%) sepia(8%) saturate(30%) hue-rotate(202deg) brightness(99%) contrast(100%)'
            }
         }
     },

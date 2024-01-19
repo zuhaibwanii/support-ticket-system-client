@@ -48,17 +48,17 @@ const Table = ({
         }
     }, [loader])
 
-  
+
     const handleBackClick = () => {
         if (startIndex >= pagination.limit) {
-            console.log('new idx = ',startIndex - pagination.limit);
+            console.log('new idx = ', startIndex - pagination.limit);
             setStartIndex(startIndex - pagination.limit)
         }
     }
 
     const handleForwardClick = () => {
         if (startIndex + pagination.limit < pagination.totalCount) {
-            console.log('new idx = ',startIndex + pagination.limit);
+            console.log('new idx = ', startIndex + pagination.limit);
             setStartIndex(startIndex + pagination.limit);
         }
     }
@@ -113,30 +113,7 @@ const Table = ({
                             <tr className={styles.Table_Data} key={key}>
 
                                 {
-                                    tableHeadings.map((data, i) => {
-                                        if (data.isBtn) {
-                                            return (<td key={i} className={`${styles.btnCell} ${getBtnClass(element, data)}`}>
-                                                <span>{getValue(element, data)}</span>
-                                            </td>)
-                                        } else if (data.key === 'actions' && withActions) {
-                                            if (element[data.key] === "PENDING") {
-                                                if (loadingIdx.includes(element['_id'])) {
-                                                    return (<td key={i} ><CircularProgress sx={{ height: '1rem !important', width: '1rem !important', color: palette.colors.red, marginLeft: '1rem' }} color="secondary" /></td>)
-                                                } else {
-                                                    return (<td key={i} className={`${styles.buttonCell}`}>
-                                                        <CheckIcon sx={{ color: palette.successColor }} onClick={() => handleAccept(element)} />
-                                                        <ClearIcon sx={{ color: palette.errorColor }} onClick={() => handleReject(element)} />
-                                                    </td>)
-                                                }
-
-                                            } else {
-                                                return (<td key={i}>-</td>)
-                                            }
-
-                                        } else {
-                                            return (<td key={i}>{getValue(element, data)}</td>)
-                                        }
-                                    }
+                                    tableHeadings.map((data, i) => (<td key={i}>{getValue(element, data)}</td>)
                                     )
                                 }
                             </tr>
@@ -153,7 +130,7 @@ const Table = ({
                         </div> : null
                 }
                 {
-                    (!loader && !tableData.length && <div className={styles.emptyTable} style={{ minHeight: '10vh' }}>
+                    (!loader && !tableData.length && <div className={styles.emptyTable} style={{ minHeight: '50vh' }}>
                         No data found
                     </div>)
                 }

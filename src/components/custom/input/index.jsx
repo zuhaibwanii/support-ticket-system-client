@@ -77,18 +77,13 @@ const useStyles = makeStyles(() => ({
                 color: '#666666', /* Dark grey */
                 cursor: 'not-allowed',
               }
-            // '&::placeholder': {
-            //     color: isEmpty ? 'red' : 'rgb(112, 112, 112, 0.9)',
-            //     // color : 'red',
-            //     // opacity: 1 /* Firefox */
-            // },
         },
 
         '&:focus-within': {
-            outline: `2px solid ${palette.colors.red} !important`,
+            outline: `2px solid ${palette.colors.black} !important`,
         },
         '&:hover': {
-            outline: `2px solid ${palette.colors.red} !important`,
+            outline: `2px solid ${palette.colors.black} !important`,
         },
     },
     error: {

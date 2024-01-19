@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
         overflow: 'auto',
         width: '100%',
         maxHeight: '72vh', //while freezing table header
-        // height: '57vh',
+        boxShadow:'0px 0px 8px -4px rgba(0,0,0,0.5)',
         '&::-webkit-scrollbar': {
             height: '6px',
             width: '6px',
@@ -73,7 +73,7 @@ const useStyles = makeStyles(() => ({
         height: '3rem',
         textAlign: 'start',//table text alignment - this was center
         '& > th': {
-            backgroundColor: '#e5091440',
+            backgroundColor: '#ccc',
             fontFamily: 'Montserrat',
             fontWeight: 800,
             // minWidth: '12rem',
@@ -82,14 +82,14 @@ const useStyles = makeStyles(() => ({
             textTransform: 'capitalize',
             textAlign: 'start',//table text alignment
             paddingLeft: '2rem',//for center table text alignment
-            border: '1px solid rgb(0,0,0,0.6)'
+            border: '1px solid #fff'
         }
     },
     Table_Data: {
         // border: "1px solid rgb(112, 112, 112, 0.4)",
         // borderTop: 'none',
         borderRadius: "2px",
-        color: "#fff",
+        color: "#000",
         fontSize: "0.8rem",
         height: '3rem',
         textAlign: 'start',//table text alignment - this was center
@@ -136,14 +136,14 @@ const useStyles = makeStyles(() => ({
         }
     },
     paginationBox: {
-        color: palette.text.secondary,
+        color: palette.text.primary,
         padding: "0.6rem",
         display: 'flex',
         justifyContent: "flex-end",
         alignItems: "center",
         '& > h5': {
             // border: '1px solid black',
-            color: palette.text.secondary,
+            color: palette.text.primary,
             fontFamily: "Montserrat",
             fontSize: "0.8rem",
             fontWeight: 600,

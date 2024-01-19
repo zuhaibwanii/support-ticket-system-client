@@ -10,20 +10,20 @@ const Card = ({ title = '', description = '', status = '', assignedTo, dateCreat
   const getColor = () => {
     let color = '#000';
     if(severity === 'HIGH') color = palette.errorColor;
-    if(severity === 'MEDIUM')color = 'yellow'
+    if(severity === 'MEDIUM')color = '#FFB300'
     return color
   }
   return (
     <div className={classes.card}>
       <h1 title={title}>{commonUtils.truncateString(title, 30)}</h1>
       <h2 title={description}>{commonUtils.truncateString(description, 200)}</h2>
-      <div className={classes.detailWrapper}>
+      <div className={classes.detailWrapper} style={{bottom:'4rem'}}>
         <span>Status: <span>{status}</span></span>
         <span>Assigned To: <span>{assignedTo}</span></span>
       </div>
-      <div className={classes.detailWrapper}>
+      <div className={classes.detailWrapper} style={{bottom:'2rem'}}>
         <span>Created On: <span>{dateCreated}</span></span>
-        <span>Severity:<span style={{ color: getColor() }}> {severity}</span></span>
+        <span>Severity:<span style={{ color: getColor(), fontWeight:700 }}> {severity}</span></span>
       </div>
     </div>
   )
@@ -34,7 +34,8 @@ export default Card;
 
 const useStyles = makeStyles(() => ({
   card: {
-    width: '26rem',
+    position: 'relative',
+    width: '30%',
     aspectRatio: 16 / 9,
     borderRadius: 5,
     padding: '1rem',
@@ -53,34 +54,22 @@ const useStyles = makeStyles(() => ({
       fontWeight: 500,
       color: palette.colors.gray,
       minHeight: '5rem'
-    },
-    // '@media (max-width:370px)': {
-    //   width: '8rem',
-    //   '& h4, h6': {
-    //     fontSize: '0.7rem',
-    //   },
-    //   '& h6': {
-    //     fontSize: '1.2rem'
-    //   },
-    //   '& > button': {
-    //     padding: '0.7rem'
-    //   },
-    // },
-    // '@media (max-width:299px)': {
-    //   width: '7rem'
-    // },
+    }
   },
   detailWrapper: {
     display: 'flex',
     justifyContent: 'space-between',
+    position: 'absolute',
+    width: 'calc(100% - 2rem)',
     '& > span': {
       fontFamily: 'Montserrat',
       fontWeight: 700,
-      fontSize: '0.9rem',
+      fontSize: '0.8rem',
       '& > span': {
+        marginLeft:'0.5rem',
         fontFamily: 'Montserrat',
         fontWeight: 500,
-
+        fontSize: '0.7rem',
       }
     }
   }
